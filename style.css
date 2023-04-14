@@ -1,0 +1,675 @@
+body{
+  padding-top: 80px; 
+  /* ヘッダーの後ろに要素が隠れないようにするため */
+  margin: 0;
+  background-color: white;
+  font-family: -apple-system, system-ui, 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  color: #222222;
+}
+
+
+/* --------------------------------- */
+/* all */
+/* --------------------------------- */
+.container{
+  max-width: 1280px;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.-row{
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+p{
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+.-gray{
+  background-color: #F7F7F7;
+}
+a{
+  color: #222222;
+}
+
+/* --------------------------------- */
+/* header */
+/* --------------------------------- */
+header{
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  background-color: white;
+  position: fixed;/* 位置を固定する */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.header{
+  width: 100%;
+  height: auto;
+  padding-top: 16px;
+}
+.icon{
+  width: 32px;
+  height: 32px;
+}
+.btn{
+  width: 238px;
+  height: 47px;
+  font-weight: bold;
+  margin: 0;
+  border: solid 1px black;
+  border-radius: 10px;
+}
+.btn p{
+  text-align: center;
+  margin-top: 11px;
+}
+
+/* --------------------------------- */
+/* maein */
+/* --------------------------------- */
+main{
+  padding-top: 80px;
+  border-bottom: 1px solid #E2E2E2;
+}
+
+/* ----------------------- */
+/* main-v */
+.calc-sim{
+  width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sim_title{
+  font-weight: bold;
+  font-size: 38px;
+  color: #ff385c;
+}
+.sim_p{
+  font-weight: bold;
+  font-size: 38px;
+}
+.total{
+  font-size: 72px;
+  margin: 24px 0;
+}
+.sim_gray{
+  color: #222222;
+}
+
+.c-01{
+  text-align: center;
+}
+.input{
+  width: 140px;
+  height: 58px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 53px;
+  border: 1px solid #717171;
+  border-radius: 10px;
+}
+.t-01{
+  font-size: 14px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+.f-gray{
+  font-size: 14px;
+  color: #717171;
+}
+
+/* -----------------------
+* レンジ入力欄（数値を選べるスライダー） */
+/* ---------------
+* リセットCSS */
+* {
+  box-sizing: border-box;
+}
+/* ---------------
+* 以下スライダーのCSS */
+input[type="range"] {
+  height: 4px; /* バーの高さ */
+  width: 406px; /* バーの幅 */
+  margin: 28px 0;
+  background: #DDDCDC; /* バーの背景色 */
+  border-radius: 10px; /* バーの両端の丸み */
+  outline: none; /* スライダーのアウトラインは見た目がキツイので消す */
+  cursor: pointer; /* カーソルを分かりやすく */
+  -webkit-appearance: none; /* 🚩これ無しだとスタイルがほぼ全く反映されないので注意 */
+  appearance: none;
+}
+/* ---------------
+* つまみ */
+input[type="range"]::-webkit-slider-thumb {
+  width: 24px; /* 幅 */
+  height: 24px; /* 高さ */
+  background: #222222; /* 背景色 */
+  border-radius: 50%; /* 円形に */
+  -webkit-appearance: none; /*  🚩デフォルトのつまみのスタイルを解除 */
+}
+/* ---------------
+/* Firefoxで点線が周りに表示されてしまう問題の解消 */
+input[type="range"]::-moz-focus-outer {
+  border: 0;
+}
+
+/* ---------------
+* modal_window */
+.open {
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: absolute;
+  top: 0;
+	left: 0;
+}
+/* 窓外をクリックした時に閉じるようにする */
+.close_overlay {
+	width: 100%;
+	height: 100%;
+	text-indent: -9999px;/* 頭文字に空白 */
+  display: block;
+	position: absolute;
+  top: 0;
+	left: 0;
+  background: #000;/* ↓セットで開いた時にバックを暗くする */
+	opacity: 0.5;
+	z-index: 5;
+}
+.modal_window {
+  width: 480px;
+	height: auto;
+	background: #fff;
+  border-radius: 10px;
+	display: block;
+	position: absolute;/* ウィンドウの位置指定 */
+  top: 30%;
+	left: 50%;
+	margin: -150px 0 0 -200px;/* ここまででウィンドウの位置指定 */
+	z-index: 10;
+}
+.window-inner{
+  padding: 25px;
+  position: relative;
+}
+.window_header{
+  width: 100%;
+  height: 48px;
+}
+.close_btn{
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+}
+.close_btn:hover{
+  background-color: #F7F7F7;
+  border-radius: 30px;
+}
+.mw_title{
+  font-size: 32px;
+  color: #222222;
+  font-weight: bold;
+  line-height: 36px;
+  padding-bottom: 15px;
+}
+.mw_text + .mw_text {
+  padding: 10px 0;
+}
+.mw_text a{
+  font-weight: bold;
+  color: #000;
+}
+/* target=ページ内のリンク先にジャンプしたときに、その要素に対してスタイルを適用する。 */
+div#modal div:target {
+	animation-name: SlideIn; 
+  animation-duration: 1s;
+	animation-iteration-count: 1;
+	opacity: 1;
+	display:block;
+}
+@keyframes SlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------
+* filtering */
+.filter{
+  width: 410px;
+  height: 64px;
+  margin: 32px 0;
+  border: 1px solid #EBEBEB;
+  border-radius: 50px;
+}
+.filter img{
+  margin: 21px;
+}
+.filter a{
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------
+* modal_window */
+.window-group{
+  padding: 0 15px;
+}
+.w_h03{
+  text-align: center;
+}
+.-title03{
+  font-size: 16px;
+  line-height: 0px;
+  padding: 15px 0 ;
+}
+.box-03{
+  width: 100%;
+  border-top: 1px solid #DDDDDD;
+  border-bottom: 1px solid #DDDDDD;
+}
+.item-03{
+  padding: 40px 0;
+}
+.item-03 + .item-03{
+  border-top: 1px solid #DDDDDD;
+}
+/* ---------------
+* 現在地  lpcation */
+.location{
+  margin-top: 28px;
+}
+.search-form {
+  width: 432px;
+  height: 48px;
+  align-items: center;
+  border: 1px solid #DDDDDD;
+  border-radius: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+.search-form img{
+  width: 10px;
+  height: 16px;
+  margin: 0 23px;
+}
+.search-form input {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  padding: 0;
+  border: none;
+  outline: none;/* 枠を消す */
+  box-sizing: border-box;
+}
+
+
+/* -------------
+* 部屋タイプ btn */
+.room-btn{
+  width: 100%;
+  height: 45px;
+  padding: 7px;
+  margin-top: 28px;
+  background-color: #EBEBEB;
+  border-radius: 30px;
+}
+.room-btn label{
+  width: 208px;
+  height: 100%;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  text-decoration: none;
+  background: #EBEBEB;
+  box-sizing: border-box;
+  border-radius: 30px;
+  display: block;
+  cursor: pointer;
+}
+.room-btn input:checked+label{
+  background: #FFFFFF;
+  color: #222;
+}
+.room-btn input{
+  display: none;
+} 
+/* ---------
+* ゲスト人数 */
+.count_btn{
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #717171;
+  background-color: #fff;
+  border: 1px solid #717171;
+  border-radius: 50px;
+}
+.count_btn:hover{
+  color: #000;
+  border-color: #000;
+}
+.count_input{
+  width: 15px;
+  height: 21px;
+  margin: 0 7px;
+  font-size: 16px;
+  color: #222222;
+  border:none;
+}
+.window_footer{
+  padding-top: 17px;
+}
+.btn-black{
+  width: 100%;
+  height: 48px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #222222;
+  border-radius: 10px;
+}
+
+/* ---------------
+* ボタン */
+.btn-red{
+  width: 259px;
+  color: white;
+  text-align: center;
+  padding: 5px 20px;
+  margin: 0;
+  background-color: #DC1263;
+  border-radius: 10px;
+}
+.btn-box{
+  justify-content: flex-start;
+}
+.btn-left{
+  margin-right: 8px;
+}
+/* ---------------
+* map */
+.map{
+  width: 100%;
+  height: 100%;
+}
+.map iframe{
+  width: 640px; 
+  height: 610px;
+  border-radius: 30px;
+}
+
+/* ------------
+* benefit */
+.benefit{
+  width: 100%;
+  padding: 120px 0;
+}
+.benefit-headline{
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.benefit img{
+  width: 100%;
+  margin-bottom: 40px;
+}
+.benefit_box{
+  width: 100%;
+  margin-bottom: 64px;
+} 
+/* ------------
+* benefit_card */
+.benefit_card{
+  width: 373px;
+  height: 148px;
+}
+.card-title{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.card-gray{
+  color: #717171;
+}
+
+/* ---------------
+* btn */
+.benefit-bottom
+{
+  width: 100%;
+  text-align: center;
+}
+.benefit_p{
+  width: auto;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+.benefit-btn{
+  margin: 0 auto;
+}
+
+/* -----------------------
+* faq */
+.faq{
+  width: 100%;
+  padding: 48px 0;
+  display: flex;
+  align-items: flex-start;
+}
+.faq-inner{
+  display: flex;
+  align-items: flex-start;
+}
+.faq_headline{
+  width: 320px;
+  font-size: 40px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ---------------
+* acc */
+.accordion{
+  width: 640px;
+}
+.acc_item{
+  padding: 31px 0 ;
+  border-bottom: 1px solid #E2E2E2;
+}
+.acc_head{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-size: 22px;
+  color: #222222;
+  cursor: pointer;/* カーソルの種類 */
+}
+.acc_head:-webkit-details-marker {
+  display: none;
+}
+.acc_head:after {
+  transform: translateY(-25%) rotate(45deg);
+  width: 7px;
+  height: 7px;
+  margin-left: 10px;
+  margin-top: 12px;
+  border-bottom: 3px solid #222222;
+  border-right: 3px solid #222222;
+  content: '';
+  transition: transform .3s;
+}
+.acc_item[open] summary:after {
+  transform: rotate(225deg);
+}
+.acc_text {
+  transform: translateY(-10px);
+  opacity: 0;
+  margin: 0;
+  padding: 14px 0;
+  font-size: 18px;
+  color: #717171;
+  transition: transform .5s, opacity .5s;
+}
+.acc_item[open] .acc_text {
+  transform: none;
+  opacity: 1;
+}
+.acc_p{
+  margin: 18px 0;
+}
+.accordion a{
+  font-weight: bold;
+  color: #000000;
+}
+
+/* -----------------------
+* image */
+.image{
+  width: 100%;
+  height: 100%;
+  padding: 42px 0 80px 0;
+}
+.image-inner{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.img-pc{
+  width: 568px;
+  height: 324px;
+}
+.img-sp{
+  display: none;
+}
+.image_box{
+  margin: 72px 0 0 72px;
+  display: flex;
+  flex-direction: column;
+}
+.imege_headline{
+  font-size: 40px;
+  font-weight: bold;
+}
+.image-text{
+  margin-bottom: 24px;
+  font-size: 18px;
+  color: #AEAEAE;
+}
+
+/* ---------------------------------
+* nav
+* --------------------------------- */
+nav{
+  width: 100%;
+  height: auto;
+}
+.nav-inner{
+  padding: 45px 0;
+  border-bottom: 1px solid #E2E2E2;
+  display: flex;
+  align-items: flex-start;
+}
+.nav_box{
+  width: 326px;
+  height: auto;
+}
+.nav_box h1{
+  font-size: 14px;
+  font-weight: bold;
+}
+.nav_box ul{
+  height: auto;
+  list-style: none;
+  padding: 0;
+}
+.nav_box li{
+  font-size: 14px;
+  margin: 9px 0;
+}
+.nav_box a{
+  text-decoration: none;
+  color: #222222;
+}
+.nav_box a:hover{
+  text-decoration: underline;
+}
+
+/* ---------------------------------
+* footer
+* --------------------------------- */
+.footer-inner{
+  padding: 25px 0;
+}
+.copyright{
+  width: 478px;
+}
+.copyright a{
+  text-decoration: none;
+}
+.copyright a:hover{
+  text-decoration: underline;
+}
+.footer_nav br{
+  display: none;
+}
+.fn_a::before{
+  content: "·";
+  margin: 0 7px;
+}
+
+/* ---------------
+* footer-right */
+.footer-right{
+  width: 270px;
+  margin: 0;
+  font-weight: bold;
+}
+.footer-right img{
+  width: 18px;
+  height: 18px;
+}
+.lang{
+  width: 118px;
+  margin: 0;
+}
+.cur{
+  width: 42px;
+  margin: 0;
+}
+.sns{
+  width: 80px;
+  margin: 0;
+}
+.sp-footer{
+  display: none;
+}

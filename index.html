@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <!-- responsiv css -->
+  <link rel="stylesheet" href="css/responsiv.css">
+</head>
+<body>
+
+  <header>
+    <div class="header">
+      <div class="container">
+        <div class="header-inner -row">
+          <img src="img/airbnb_logo_icon_170605.png" class="icon" alt="">
+          <div class="btn">
+            <p>スーパーホストとチャット</p>
+          </div><!-- /btn -->
+        </div><!-- /header-inner -->
+      </div><!-- /container -->
+    </div><!-- /header -->
+  </header>
+
+  <main>
+    <div class="main-v">
+      <div class="container">
+        <div class="mv-inner -row">
+
+          <div class="calc-sim">
+            <p class="sim_title">Airbnbでホスティング。</p>
+            <p class="sim_p">予⁠想ホ⁠ス⁠テ⁠ィ⁠ン⁠グ収⁠入⁠は</p>
+            <p class="total">¥99,999</p> 
+            <p class="sim-gray">1泊あたりの予想ホスティング収入¥ 99,999で<a href="#open01"><span id="current-value"></span>泊</a></p>
+
+            <div id="modal">
+              <div id="open01" class="open">
+                <a href="#" class="close_overlay">×</a>
+                <!-- 窓外の閉じるボタン -->
+
+                <div class="modal_window">
+                  <div class="window-inner">
+
+                    <div class="window-group">
+                      <div class="window_header w_h03">
+                        <a href="#" class="close_btn">×</a><!-- 閉じるボタン -->
+                        <p class="mw_title">受け入れ泊数は？</p>
+                      </div><!-- /window_header -->
+                    </div><!-- /window-group -->
+
+                    <div class="box-03">
+                      <div class="window-group">
+                        <div class="item-03">
+                          <div class="count c-01">
+                            <button class="count_btn" id="down">－</button>
+                            <input type="text" id="textbox" class="input" value="7">
+                            <button class="count_btn" id="up">＋</button>
+                            <p class="mw_text t-01">泊</p>
+                            <p class="mw_text f-gray">ひと月の全日が予約可能な場合の平均予約泊数22泊</p>
+                          </div><!-- /count -->
+                        </div><!-- /item-03 -->
+                      </div><!-- /group-03 -->
+                    </div><!-- /box-03 -->
+
+                    <div class="window_footer">
+                      <div class="window-group">
+                        <button class="btn-black">予想ホスティング収入を更新</button>
+                      </div><!-- /window-group -->
+                    </div><!-- /window_footer -->
+
+                  </div><!-- /window-inner -->
+                </div><!--/modal_window--> 
+
+              </div><!--/open01-->
+            </div><!-- /modal -->
+
+            <input type="range" id="example" min="1" max="30" step="1" value="7">
+            <a href="#open02">予想ホスティング収入額の計算方法を確認</a>
+
+            <!-- モデル ウィンドウ -->
+            <div id="modal">
+              <div id="open02" class="open">
+                <a href="#" class="close_overlay">×</a>
+                <!-- 窓外の閉じるボタン -->
+
+                <div class="modal_window">
+                  <div class="window-inner">
+
+                    <div class="window_header">
+                      <a href="#" class="close_btn">×</a><!-- 閉じるボタン -->
+                    </div>
+
+                    <p class="mw_title">予想ホスティング収⁠入⁠額⁠の計⁠算⁠方⁠法</p>
+                    <p class="mw_text">
+                      Airbnbでは類似のAirbnbリスティングにおける過去12か月分の予約データを確認し、予想ホスティング収入を算出しています。類似のリスティングは、ホストにより提供されたリスティング情報をもとに選出されます。住所を入力すると、最寄りのリスティングに基づくより具体的な予想収入が表示されます。エリアを入力すると、ホスティング収入に基づき、同エリア内における上位50%の類似のリスティングが表示されます。
+                    </p>
+                    <p class="mw_text">
+                      Airbnbは、上記の類似リスティングをもとに1泊あたりの平均予想ホスティング収入を算出し、その値にホストが入力した受け入れ泊数をかけます。また、1か月間すべての日付がAirbnbで予約可能であるとの仮定に基づいて、同エリア内のリスティングにおける月あたりの平均予約泊数も表示します（1泊あたりのホスティング収入とは、各ホストが設定した料金から<a href="#">Airbnbホストサービス料</a>を差し引いた金額であり、税金やホスティング諸費用を差し引く前のものです）。
+                    </p>
+                    <p class="mw_text">
+                      実際のホスティング収入は、リスティングの予約可能状況や料金、エリア内の需要など、さまざまな要因に左右されます。また、ホスティングできるかどうかは、地域の法令によっても異なる場合があります。<a href="#">ホストの責任について詳しくはこちら</a>でご確認いただけます。
+                    </p>
+                    <p class="mw_text">
+                      予想ホスティング収入は、宿泊施設の価値を査定したり、見積もったりするものではありません。
+                    </p>
+                  </div><!-- /window-inner -->
+                </div><!-- /modal_window--> 
+
+              </div><!-- /#open01-->
+            </div><!-- /modal -->
+
+            <!-- filtering -->
+            <div class="filter -row">
+              <a href="#open03">
+                <img src="img/search.png" width="20px" height="20px" alt="">
+              </a>
+            </div><!-- /filter -->
+             
+            <!-- filter modal window-->
+              <div id="modal">
+                <div id="open03" class="open">
+                  <a href="#" class="close_overlay">×</a>
+                  <!-- 窓外の閉じるボタン -->
+
+                  <div class="modal_window">
+                    <div class="window-inner">
+
+                      <div class="window-group">
+                        <div class="window_header w_h03">
+                          <a href="#" class="close_btn">×</a><!-- 閉じるボタン -->
+                          <p class="mw_title -title03">リスティングの情報を入力してください</p>
+                        </div><!-- /window_header -->
+                      </div><!-- /window-group -->
+
+                      <div class="box-03">
+                        <div class="window-group">
+
+                          <div class="item-03">
+                            <p class="mw_title -title03">所在地またはエリア</p>
+                            <div class="location">
+                              <form action="#open04" class="search-form">
+                                <img src="img/location.jpg" alt="">
+                                <label>
+                                  <input type="text" neme ="city" placeholder="東京">
+                                </label>
+                              </form>
+                            </div><!-- /location -->
+                          </div><!-- /item-03 -->
+
+                          <div class="item-03">
+                            <p class="mw_title -title03">部屋タイプ</p>
+                            <div class="room-btn -row">
+                              <input type="radio" checked id="1" name="room"><label for="1">まるまる貸切</label>
+                              <input type="radio" id="2" name="room"><label for="2">個室</label>
+                            </div><!-- /room-btn -->
+                          </div><!-- /item-03 -->
+
+                          <div class="item-03 -row">
+                            <p class="mw_title -title03">最大ゲスト人数</p>
+                            <div class="count">
+                              <button class="count_btn" id="down">－</button>
+                              <input type="text" id="textbox" class="count_input"value="0">
+                              <button class="count_btn" id="up">＋</button>
+                            </div><!-- /count -->
+                          </div><!-- /item-03 -->
+
+                        </div><!-- /group-03 -->
+                      </div><!-- /box-03 -->
+
+                      <div class="window_footer">
+                        <div class="window-group">
+                          <button class="btn-black">予想ホスティング収入を更新</button>
+                        </div><!-- /window-group -->
+                      </div><!-- /window_footer -->
+
+                    </div><!-- /window-inner -->
+                  </div><!--/modal_window--> 
+
+                </div><!--/open03-->
+              </div><!-- /modal -->
+
+            <div class="btn-red">
+              <div class="btn-box -row">
+                <div class="btn-left">
+                  <img src="img/home.png" width="35px" height="30px" alt="">
+                </div>
+                <div class="btn-right">
+                  <p>Airbnbスタートツール</p>
+                </div><!-- /btn-right -->
+              </div><!-- /btn-box -->
+            </div><!-- /btn-red -->
+
+          </div><!-- /calc-sim -->
+
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207446.248195398!2d139.60078374310388!3d35.66844146234758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b857628235d%3A0xcdd8aef709a2b520!2z5p2x5Lqs6YO95p2x5Lqs!5e0!3m2!1sja!2sjp!4v1679148209917!5m2!1sja!2sjp"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div><!-- /map -->
+
+        </div><!-- /mv-inner -->
+      </div><!-- /container -->
+    </div><!-- /main-v -->
+
+    <div class="benefit">
+      <div class="container">
+        <div class="benefit-inner">
+          <p class="benefit-headline">
+            Airbnbスタートツールで手軽にホスティングをはじめよう
+          </p>
+          <img src="img/banner01.jpg" height="489px" alt="">
+
+          <div class="benefit_box -row">
+
+            <div class="benefit_card">
+              <p class="card-title">
+                スーパーホストが1対1でサポート</p>
+              <p class="card-gray">
+                同じエリア内のスーパーホストとおつなぎします。基本的な質問から初めてのゲストの受け入れまで、電話やビデオ通話、チャットでサポートを受けられます。</p>
+            </div>
+
+            <div class="benefit_card">
+              <p class="card-title">
+                Airbnbで旅慣れたゲストを<br class="br-small">対象とした<br class="br-large">初めての宿泊予約
+              </p>
+              <p class="card-gray">
+                最初の予約では、Airbnbで3回以上予約宿泊をしたことがあり、ほかのホストからよい評価を得ているゲストを迎えることもできます。</p>
+            </div>
+
+            <div class="benefit_card">
+              <p class="card-title">
+                ホスティング初心者の応援に<br>
+                特化したAirbnbのサポート</p>
+              <p class="card-gray">
+                新規ホストは、アカウントの問題から請求に関するサポートまで、さまざまなことをお手伝いする専門のトレーニングを受けたコミュニティサポート担当者に、ワンクリックでお問い合わせいただけます。</p>
+            </div><!-- /benefit_card -->
+
+          </div><!-- /benefit_box -->
+
+          <div class="benefit-bottom">
+            <p class="benefit_p">さらに詳しく知りたいですか？</p>
+            <div class="btn benefit-btn">
+              <p>スーパーホストとチャット</p>
+            </div><!-- /btn -->
+          </div><!-- /benefit-bottom -->
+
+        </div><!-- /benefit-inner -->
+      </div><!-- /bene container -->
+    </div><!-- /benefit -->
+
+    <div class="faq -gray">
+      <div class="container">
+
+        <div class="faq-inner -row">
+          <p class="faq_headline">
+            みなさまの質問に<br>お答えします
+          </p>
+
+          <!-- acc -->
+          <div class="accordion">
+            <details class="acc_item">
+              <summary class="acc_head">
+                掲載を検討中の自分のお⁠部⁠屋⁠/お家はAirbnb向きでしょうか？
+              </summary>
+              <div class="acc_text">
+                <p>Airbnbのゲストは、いろいろなお部屋に興味をお持ちです。また、Airbnbのリスティングにはタイニーハウス、ログハウス、ツリーハウスなど、さまざまなタイプがあります。たとえ空き部屋でも、素晴らしい宿泊先になりえます。</p>
+              </div>
+            </details>
+
+            <details class="acc_item">
+              <summary class="acc_head">
+                  継続的にホスティングする必⁠要⁠はあ⁠り⁠ま⁠す⁠か⁠？
+              </summary>
+              <div class="acc_text">
+                <p>そのような必要はまったくありません。ホストのみなさまは、ご自身のカレンダー設定を自由に管理できます。年に1回でもひと月に数泊程度でも、またはより頻繁なホスティングでも、ご自身で選んでいただけます。</p>
+              </div>
+            </details>
+
+            <details class="acc_item">
+              <summary class="acc_head">
+                ゲストとはどの程度や⁠り⁠取⁠りす⁠れ⁠ばよ⁠い⁠で⁠す⁠か⁠？
+              </summary>
+              <div class="acc_text">
+                <p>ご自分次第です。ゲストのチェックイン時に短いひとことを送るなど、重要なタイミングにのみメッセージを送ることを好むホストもいれば、ゲストと直接会うことを楽しむホストもいます。ご自身とゲストに適したスタイルを見つけましょう。</p>
+              </div>
+            </details>
+
+            <details class="acc_item">
+              <summary class="acc_head">
+                 素晴らしいAirbnbホストになるためのヒントはありますか？
+              </summary>
+              <div class="acc_text">
+                <p>基本をしっかり押さえることが大切です。お部屋を清潔に保ち、ゲストに迅速に対応し、清潔なタオルなど必要なアメニティ・設備を提供しましょう。ホストによっては、新鮮なお花を飾ったり、地元のおすすめスポットのリストを用意したりするなど、その人ならではのおもてなしを加える方もいますが、必要というわけではありません。<br>
+                <a href="#">ホスティングのヒントをもっと読む</a></p>
+              </div>
+            </details>
+
+            <details class="acc_item">
+              <summary class="acc_head">
+                Airbnbのサービス料とは？
+              </summary>
+              <div class="acc_text">
+                <p>Airbnbのサービス料は通常、予約料金の小計の3%で、受取金の送金時に回収されます。また、予約時にゲストからも手数料が回収されます。Airbnbは多くの地域で、売上税（消費税）や観光税の徴収・納付を自動的に代行しています。<br>
+                <a href="#">手数料の詳細はこちら</a></p>
+              </div>
+            </details>
+
+            <details class="acc_item">
+              <summary class="acc_head">
+                Airbnbのホストとして、どのように守ってもらえますか？
+              </summary>
+              <div class="acc_text">
+                <p>
+                  日本では、すべての予約を対象に<a href="#">日本ホスト保険</a>が適用され、追加料金はかかりません。ゲストの滞在中にリスティングが破損した場合、最大¥100,000,000の補償が適用される可能性があります。また、ゲストあるいは第三者が関わる財物破損・人身傷害に対して賠償責任や費用を負担する場合にも、補償が適用となる可能性があります。
+                </p>
+                <p class="acc_p">
+                  日本ホスト保険による支払いには一定の条件、制限、例外が適用されます。詳しくは、<a href="#">日本ホスト保険の概要ページ</a>をご確認ください。
+                </p>
+                <p>
+                  なお、日本国外のすべてのホストは、<a href="#">ホストのためのAirCover</a>がお守りします。
+                </p>
+              </div>
+            </details>
+
+          </div><!-- /accordion -->
+        </div><!-- /faq-inner -->
+
+      </div><!-- /faq container -->
+    </div><!-- /faq -->
+
+    <div class="image -gray">
+      <div class="container">
+
+        <div class="image-inner -row">
+          <img src="img/banner02-pc.jpg" class="img-pc" alt="pc用画像">
+          <img src="img/banner02.jpg" class="img-sp" alt="スマホ用画像">
+
+          <div class="image_box">
+            <p class="imege_headline">ほかにご⁠質⁠問⁠があ⁠り⁠ま⁠す⁠か⁠？</p>
+            <p class="image-text">お近くの経験豊かなスーパーホストに答えてもらいましょう。</p>
+            <div class="btn">
+              <p>スーパーホストとチャット</p>
+            </div><!-- /btn -->
+          </div><!-- /image_box -->
+
+        </div><!-- image-inner -->
+
+      </div><!-- /imge container -->
+    </div><!-- /image -gray -->
+
+  </main>
+  
+  <nav>
+    <div class="nav -gray">
+      <div class="container">
+
+        <div class="nav-inner -row">
+          <div class="nav_box">
+            <h1>サポート</h1>
+            <ul>
+              <li><a href="">ヘルプセンター</a></li>
+              <li><a href="">AirCover</a></li>
+              <li><a href="">障害のある方へのサポート</a></li>
+              <li><a href="">キャンセルオプション</a></li>
+              <li><a href="">Airbnbの新型コロナウイルスに対する取り組み</a></li>
+              <li><a href="">近隣トラブルを報告する</a></li>
+            </ul>
+          </div>
+
+          <div class="nav_box">
+            <h1>コミュニティ</h1>
+            <ul>
+              <li><a href="">Airbnb.org：災害発生時の滞在先</a></li>
+              <li><a href="">差別に対する取り組み</a></li>
+            </ul>
+          </div>
+
+          <div class="nav_box">
+            <h1>ホスティング</h1>
+            <ul>
+              <li><a href="">Airbnbにお部屋を掲載する</a></li>
+              <li><a href="">ホストのためのAirCover</a></li>
+              <li><a href="">ホスト向けリソースを確認</a></li>
+              <li><a href="">コミュニティフォーラムへ</a></li>
+              <li><a href="">責任をもってホスティングする方法</a></li>
+            </ul>
+          </div>
+
+          <div class="nav_box">
+            <h1>Airbnb</h1>
+            <ul>
+              <li><a href="">ニュースルーム</a></li>
+              <li><a href="">新機能のご紹介</a></li>
+              <li><a href="">Airbnb創業者からの手紙</a></li>
+              <li><a href="">採用情報</a></li>
+              <li><a href="">株主・投資家のみなさまへ</a></li>
+            </ul>
+          </div><!-- /nav_box -->
+        </div><!-- /nav-inner -->
+
+      </div><!-- /nav container -->
+    </div><!-- /nav -->
+  </nav>
+
+  <footer>
+    <div class="footer -gray">
+      <div class="container">
+
+        <div class="footer-inner -row">
+          
+          <div class="copyright">
+            <p>
+              <small>
+                <div class="copy">
+                  <a href="" >Airbnb Global Services Limited<br>
+                  観光庁長官(01)第S0001号(2018年6月15日-2023年6月14日)</a><br>
+                </div>
+                <div class="footer_nav -row">
+                  <p>© 2023 Airbnb, Inc.</p>
+                  <div class="fn-box">
+                    <a href="" class="fn_a">プライバシー</a>
+                    <a href="" class="fn_a">利用規約</a>
+                    <a href="" class="fn_a">サイトマップ</a>
+                    <a href="" class="fn_a">企業情報</a>
+                  </div><!-- /fn-box -->
+                </div><!-- /footer_nav -->
+              </small>
+            </p>
+          </div><!-- /copyright -->
+
+          <div class="footer-right -row">
+            <div class="lang -row">
+              <img src="img/language.jpg" alt="">
+              <p>日本語（JP）</p>
+            </div>
+            <div class="cur -row">
+              <p>¥</p>
+              <p>JPY</p>
+            </div>
+            <div class="sns -row">
+              <a href=""><img src="img/icon-facebook.png" alt=""></a>
+              <a href=""><img src="img/logo-twitter.png" alt=""></a>
+              <a href=""><img src="img/icon-instagram.jpg" alt=""></a>
+            </div><!-- /sns -->
+          </div><!-- /footer-right -->
+
+        </div><!-- footer-inner -->
+
+      </div><!--footer container -->
+
+      <div class="sp-footer">
+        <p>Airbnbでホスティングをはじめませんか？</p>
+        <div class="btn-red footer_btn">
+          <div class="btn-box -row">
+            <div class="btn-left">
+              <img src="img/home.png" width="35px" height="30px" alt="">
+            </div>
+            <div class="btn-right">
+              <p>Airbnbスタートツール</p>
+            </div><!-- /btn-right -->
+          </div><!-- /btn-box -->
+        </div><!-- /btn-red -->
+      </div><!-- /sp-footer -->
+
+    </div><!-- footer -->
+
+  </footer>
+
+</body>
+</html>
+<!--  -->

@@ -1,0 +1,340 @@
+@media screen and (min-width:1136px) {
+  .br-small{
+    display: none;
+  }
+}
+@media screen and (max-width:1136px) {
+  .br-large{
+    display: none;
+  }
+}
+
+@media screen and (max-width:1125px) {
+  .mv-inner , .faq-inner, .copyright , .footer_nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .benefit_box , .nav-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .footer-inner{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+   .footer-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/* -----------------------
+* main-v */
+  .calc-sim{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  input[type="range"] {
+    width: 100%; 
+  }
+  .filter{
+    width: 100%;
+  }
+  .btn-red{
+    margin-bottom: 40px;
+  }
+
+  /* ---------------
+  * map */
+  .map{
+    width: 100%;
+  }
+  .map iframe{
+    width: 100%;
+    height: 400px;
+  }
+
+  /* -----------------------
+  * benefit */
+  .benefit img{
+    height: 400px;
+    margin-bottom: 40px;
+  }
+  /* ------------
+  * benefit_card */
+  .benefit_card{
+    width: 100%;
+    height: auto;
+  }
+  .benefit_card + .benefit_card {
+    margin:  20px 0;
+  }
+
+  /* -----------------------
+  * faq */
+  /* ---------------
+  * acc */
+  .accordion{
+    width: 100%;
+  }
+
+
+  /* -----------------------
+  * image */
+  .img-pc{
+    display: none;
+  }
+  .img-sp{
+    display: block;
+    width: 47%;
+  }
+
+  .image_box{
+    margin-left: 24px;
+    margin-top: 15%;
+  }
+  .imege_headline{
+    font-size: 26px;
+  }
+  .image-text{
+    font-size: 16px;
+  }
+
+  /* ---------------------------------
+  * nav
+  * --------------------------------- */
+  .nav-inner{
+    border: none;
+  }
+  .nav_box{
+    width: 100%;
+    border-bottom: 1px solid #E2E2E2;
+  }
+  .nav_box ul{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+    .nav_box li{
+    width: 33%;
+  }
+
+  /* ---------------------------------
+  * footer
+  * --------------------------------- */
+  .footer-inner{
+    padding-top: 0;
+  }
+  .copyright{
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .copyright br{
+    display: none;
+  }
+  .footer_nav br{
+    display: inline;
+  }
+
+  /* ---------------
+  * footer-right */
+  .footer-right{
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 17px;
+  }
+  .footer_nav a::before{
+    display: none;
+  }
+  .fn_a + a::before{
+    display: inline;
+    content: "·";
+    margin: 0 7px;
+  }
+  .cur{
+    margin: 0 72px 0 18px;
+  }
+
+}
+
+@media screen and (max-width:780px) {
+  /* --------------------------------- */
+  /* header */
+  /* --------------------------------- */
+  header{
+    height: 64px;
+  }
+
+  /* ---------------------------------
+  * main
+  * --------------------------------- */
+  /* -----------------------
+  * calc-sim */
+  /* ---------------
+  * modal window */
+  .modal_window {
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    margin:  0;
+  }
+  .btn-red{
+    display: none;
+  }
+  /* ---------------
+  * map */
+  .map iframe{
+    height: 650px;
+  }
+  /* -----------------------
+  * benefit */
+  .benefit{
+    padding: 80px 0;
+  }
+  .benefit-headline{
+    font-size: 26px;
+  }
+  .benefit img{
+    object-fit: cover;/* トリミング */
+    object-position: 50% 50%;/* トリミング　位置指定 */
+  }
+  .benefit_box{
+    margin-bottom: 0;
+  } 
+  /* ------------
+  * benefit_card */
+  .card-title{
+    font-size: 16px;
+  }
+  /* ---------------
+  * btn */
+  .benefit-bottom{
+    display: none;
+  }
+
+
+  /* -----------------------
+  * faq */
+  .faq_headline{
+    width: 100%;
+    font-size: 26px;
+    text-align: left;
+  }
+  /* ---------------
+  * acc */
+  .acc_head{
+    font-size: 16px;
+  }
+  .acc_text{
+    font-size: 14px;
+  }
+
+
+  /* -----------------------
+  * image */
+  .image{
+    padding: 32px 0 40px 0;
+  }
+  .image-inner{
+    display: flex;
+    flex-direction: column;
+  }
+  .img-pc{
+    display: block;
+    width: 100%;
+  }
+  .img-sp{
+    display: none;
+  }
+  .image_box{
+    margin-left: 24px;
+    margin: 32px 24px;
+  }
+
+
+  /* ---------------------------------
+  * nav
+  * --------------------------------- */
+  .nav_box ul{
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  /* ---------------------------------
+  * footer
+  * --------------------------------- */
+  footer{
+    padding-bottom: 120px;
+  }
+  .footer-inner{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  .copyright ,  .footer_nav , .footer-right{
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+  }
+  small{
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+  }
+  .copy{
+    width: 100%;
+  }
+  .footer_nav p{
+    width: 100%;
+  }
+  .fn-box{
+    width: 100%;
+  }
+  .sns{
+    display: none;
+  }
+  /* ---------------------------------
+  * ボタン　下部に固定
+  * --------------------------------- */
+  .sp-footer{
+    display: block;
+    width: 100%;
+    height: 120px;
+    padding: 16px 24px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: -7px -7px 15px 5px #EBEBEB;
+    position: fixed;/* 位置を固定する */
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .sp-footer p{
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+ .footer_btn{
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  display: block;
+ }
+ .btn-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+ }
+}
